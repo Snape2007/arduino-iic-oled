@@ -1,7 +1,5 @@
-
 #include <U8glib.h>
-
-
+//一定要加载u8glib库
 //创建u8g对象
 U8GLIB_SSD1306_128X32 u8g(U8G_I2C_OPT_NONE);
 //文字 
@@ -24,15 +22,10 @@ const static unsigned char logo3_glcd_bmp[] U8G_PROGMEM = {
 0x08,0x80,0x08,0x80,0x08,0x80,0x11,0xFE,0x11,0x02,0x32,0x04,0x34,0x20,0x50,0x20,
 0x91,0x28,0x11,0x24,0x12,0x24,0x12,0x22,0x14,0x22,0x10,0x20,0x10,0xA0,0x10,0x40,/*"你",3*/
 };
-
-
-
-//setup函数，做文字显示
 void setup()
 {
   
 }
-
 void loop()
 {
   u8g.firstPage();
@@ -41,7 +34,5 @@ void loop()
     u8g.drawBitmapP(16,8,2,16,logo1_glcd_bmp);
     u8g.drawBitmapP(32,8,2,16,logo2_glcd_bmp);
     u8g.drawBitmapP(48,8,2,16,logo3_glcd_bmp);
-
   }while(u8g.nextPage());
-
 }
